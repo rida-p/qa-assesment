@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'hedera.cucumber'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-bom
+    testImplementation group: 'io.cucumber', name: 'cucumber-bom', version: '7.18.1', ext: 'pom'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.18.1'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-platform-engine
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit-platform-engine', version: '7.18.1'
+    // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite
+    testImplementation group: 'org.junit.platform', name: 'junit-platform-suite', version: '1.11.0'
+
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty("cucumber.junit-platform.naming-strategy", "long")
+}
