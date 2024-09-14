@@ -26,8 +26,6 @@ public class HederaOperatingAccount extends HederaAccount {
     public HederaAccount createAccount(long initalHBarAmount) throws Exception {
         PrivateKey newAccountPrivateKey = PrivateKey.generateED25519();
         PublicKey newAccountPublicKey = newAccountPrivateKey.getPublicKey();
-
-
         TransactionResponse newAccount = new AccountCreateTransaction()
                 .setKey(newAccountPublicKey)
                 .setInitialBalance(Hbar.fromTinybars(initalHBarAmount))
@@ -58,5 +56,4 @@ public class HederaOperatingAccount extends HederaAccount {
                 .append(sha3Hex);
         return sha3Hex;
     }
-
 }

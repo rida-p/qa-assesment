@@ -55,6 +55,7 @@ public class FTSteps {
                 .setSupplyKey(supplyKey)
                 .freezeWith(client);
     }
+
     @When("this fungible token has been minted")
     public void this_fungible_token_has_been_minted() throws Exception {
         TokenCreateTransaction tokenCreateSign = tokenCreateTransaction.sign(creatorKey);
@@ -62,6 +63,7 @@ public class FTSteps {
         TransactionReceipt tokenCreateReceipt = tokenCreateSubmit.getReceipt(client);
         tokenId = tokenCreateReceipt.tokenId;
     }
+
     @Then("this fungible token can be sent to another account")
     public void this_fungible_token_can_be_sent_to_another_account() throws Exception {
         TokenAssociateTransaction receiverAssociationTransaction = new TokenAssociateTransaction()

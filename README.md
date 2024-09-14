@@ -1,5 +1,9 @@
 # Readme
 
+## Tech Stack
+
+Java in combination with Gradle (and optionally Docker)
+
 ## How to Run:
 
 ```bash
@@ -17,6 +21,9 @@ alternatively, open the project in your favourite IDE with cucumber/java support
 ## Environment variables
 
 In the root folder a `.env` file holds variables which are available through the `TestConfiguration` singleton class, which reads the variables in this file on first use.
+The variables in question `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` ideally would not be included in the git repository.
+
+Both Variables are used to initialise the operator account (which then spawns new accounts as needed), this account has been freshly topped up with 1000 hBars before sending over the code
 
 Should this file not be visible on linux/unix systems: `ls -a` will display hidden files starting with `.` (a dot)
 

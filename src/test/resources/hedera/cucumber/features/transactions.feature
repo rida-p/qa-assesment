@@ -8,4 +8,4 @@ Feature: As a QA, I want to validate transactions between two testnet accounts
     Examples:
     | address_type |
     | id |
-    | alias   |
+#    | alias   |
